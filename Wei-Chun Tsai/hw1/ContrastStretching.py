@@ -19,10 +19,14 @@ class ColorModel:
         plt.subplot(1, 2, 1)
         plt.imshow(rgb_img, cmap='gray')
         plt.title('Original Image')
+        plt.xticks([])
+        plt.yticks([])
 
         plt.subplot(1, 2, 2)
         plt.imshow(gray_img, cmap='gray')
         plt.title('Gray-Scale Image')
+        plt.xticks([])
+        plt.yticks([])
 
         plt.savefig('misc/IMG_RGB_Gray.pdf')
         plt.show()
@@ -44,11 +48,3 @@ class ContrastStretching:
         OutP = (InP - minI) * ( ( (maxO - minO) / (maxI - minI) ) + minO)  # Output pixel value
         cv2.imwrite('misc/High-Contrast.jpg', OutP)
         return OutP
-
-class HistogramImage:
-
-    def __init__(self):
-        pass
-
-    def histogram(image):
-        pass
