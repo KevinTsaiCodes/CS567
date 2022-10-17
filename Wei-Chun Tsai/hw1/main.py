@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import ContrastStretching as CS
-import ImageProcessing as IP
 
 file = 'Stair.jpg'
 
