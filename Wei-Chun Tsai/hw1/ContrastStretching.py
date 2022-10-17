@@ -49,6 +49,22 @@ class ContrastStretching:
         cv2.imwrite('misc/High-Contrast.jpg', OutP)
         return OutP
 
+class ContrastStretching:
+
+    def __init__(self):
+        pass
+
+    def normalize(gray_img):
+        gray_intensity = gray_img
+        InP = gray_intensity  # Input pixel value
+        minI = 10  # 可操控值, TODO, minimum pixel value in the input image
+        maxI = 100  # 可操控值, TODO, minimum pixel value in the input image
+        minO = np.min(gray_intensity)  # Minimum pixel value in the output image
+        maxO = np.max(gray_intensity) # Maximum pixel value in the output image
+        OutP = (InP - minI) * ( ( (maxO - minO) / (maxI - minI) ) + minO)  # Output pixel value
+        cv2.imwrite('misc/High-Contrast.jpg', OutP)
+        return OutP
+    
 class VersusImage:
 
     def __init__(self):
@@ -67,21 +83,3 @@ class VersusImage:
         plt.xticks([])
         plt.yticks([])
         plt.show()
-
-
-
-class ContrastStretching:
-
-    def __init__(self):
-        pass
-
-    def normalize(gray_img):
-        gray_intensity = gray_img
-        InP = gray_intensity  # Input pixel value
-        minI = 10  # 可操控值, TODO, minimum pixel value in the input image
-        maxI = 100  # 可操控值, TODO, minimum pixel value in the input image
-        minO = np.min(gray_intensity)  # Minimum pixel value in the output image
-        maxO = np.max(gray_intensity) # Maximum pixel value in the output image
-        OutP = (InP - minI) * ( ( (maxO - minO) / (maxI - minI) ) + minO)  # Output pixel value
-        cv2.imwrite('misc/High-Contrast.jpg', OutP)
-        return OutP
