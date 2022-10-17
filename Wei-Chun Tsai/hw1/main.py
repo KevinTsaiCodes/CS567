@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import ContrastStretching as CS
 
-file = 'Stair.jpg'
+file = 'Floor.jpg'
 
 if __name__ == '__main__':
     gray_img = CS.ColorModel.rgb2gray(file)
@@ -18,9 +18,5 @@ if __name__ == '__main__':
     plt.title('Contrast Stretching')
     plt.xticks([])
     plt.yticks([])
-
-    #  Histogram Plotting of Original Image and Results
-    gray_img = CS.HistogramImage.histogram(gray_img)
-    output_IMG = CS.HistogramImage.histogram(output_IMG)
-
+    
     plt.show()
