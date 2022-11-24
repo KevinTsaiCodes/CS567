@@ -1,0 +1,10 @@
+img = imread('salt-and-pepper-noise.jpg');
+% disp(h);
+% disp(w);
+padding_img = padarray(img, [3, 3], 0, 'both');
+clear img;
+% disp(padding_img);
+% imshow(padding_img);
+imwrite(padding_img, 's&p-noise_zero-padding.jpg');
+clear padding_img;
+clc;
